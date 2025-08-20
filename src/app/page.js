@@ -8,6 +8,14 @@ const productos = [
   { id: 5, nombre: "Bolso", precio: 30, categoria: { id: 3, nombre: "Accesorios" } },
 ];
 
+const usuarios = [ 
+  { id: 1, nombre: "Ana", direccion: { calle: "Calle 10", ciudad: "Bogotá", pais: "Colombia" } }, 
+  { id: 2, nombre: "Luis", direccion: { calle: "Av. Reforma", ciudad: "Ciudad de México", pais: "México" } }, 
+  { id: 3, nombre: "Marta", direccion: { calle: "Gran Vía", ciudad: "Madrid", pais: "España" } }, 
+  { id: 4, nombre: "John", direccion: { calle: "Main St", ciudad: "New York", pais: "USA" } }, 
+  { id: 5, nombre: "Pedro", direccion: { calle: "Rua Augusta", ciudad: "Lisboa", pais: "Portugal" } }, 
+];
+
 
 export default function Home() {
 
@@ -20,6 +28,18 @@ export default function Home() {
             <strong>{producto.nombre}</strong>
             <p>Precio: ${producto.precio}</p>
             <p>Categoría: {producto.categoria.nombre}</p>
+          </li>
+        ))}
+      </ul>
+      <h1>Lista de Usuarios</h1>
+      <ul>
+        {usuarios.map((usuario) => (
+          <li key={usuario.id}>
+            <strong>{usuario.nombre}</strong>
+            <p>
+              Dirección: {usuario.direccion.calle}, {usuario.direccion.ciudad},{" "}
+              {usuario.direccion.pais}
+            </p>
           </li>
         ))}
       </ul>
