@@ -24,21 +24,32 @@ const cursos = [
   { id: 5, nombre: "Flutter", modulos: [{ nombre: "Widgets" }, { nombre: "State Management" }] }, 
 ];
 
+const pedidos = [ 
+  { id: 1, cliente: "Ana", productos: [{ nombre: "Camiseta", cantidad: 2 }, { nombre: "Gorra", cantidad: 1 }] }, 
+  { id: 2, cliente: "Luis", productos: [{ nombre: "Zapatos", cantidad: 1 }, { nombre: "Bolso", cantidad: 2 }] }, 
+  { id: 3, cliente: "Marta", productos: [{ nombre: "Pantalón", cantidad: 3 }] }, 
+  { id: 4, cliente: "John", productos: [{ nombre: "Sudadera", cantidad: 1 }, { nombre: "Gorra", cantidad: 2 }] }, 
+  { id: 5, cliente: "Pedro", productos: [{ nombre: "Camiseta", cantidad: 5 }] }, 
+];
+
+
 
 export default function Home() {
 
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] ">
+      
        <h1>Lista de Productos</h1>
       <ul>
         {productos.map((producto) => (
           <li key={producto.id}>
             <strong>{producto.nombre}</strong>
             <p>Precio: ${producto.precio}</p>
-            <p>Categoría: {producto.categoria.nombre}</p>
+            <p>Categoría: {producto.categoria.nombre}</p>  <br></br>
           </li>
         ))}
-      </ul>
+      </ul> <br></br>
+      
       <h1>Lista de Usuarios</h1>
       <ul>
         {usuarios.map((usuario) => (
@@ -46,11 +57,11 @@ export default function Home() {
             <strong>{usuario.nombre}</strong>
             <p>
               Dirección: {usuario.direccion.calle}, {usuario.direccion.ciudad},{" "}
-              {usuario.direccion.pais}
+              {usuario.direccion.pais}  <br></br>
             </p>
           </li>
         ))}
-      </ul>
+      </ul>  <br></br>
       <h1>Lista de Cursos</h1>
       <ul>
         {cursos.map((curso) => (
@@ -58,12 +69,30 @@ export default function Home() {
             <strong>{curso.nombre}</strong>
             <ul>
               {curso.modulos.map((modulo, index) => (
-                <li key={index}>{modulo.nombre}</li>
+                <li key={index}>{modulo.nombre}</li>  
+              ))} <br></br>
+            </ul>
+          </li>
+        ))}
+      </ul>  <br></br>
+      <h1>Lista de Pedidos</h1>
+      <ul>
+        {pedidos.map((pedido) => (
+          <li key={pedido.id}>
+            <strong>Cliente: {pedido.cliente}</strong>
+            <ul>
+              {pedido.productos.map((producto, index) => (
+                <li key={index}>
+                  {producto.nombre} - Cantidad: {producto.cantidad} <br></br>
+                </li>
               ))}
             </ul>
           </li>
         ))}
-      </ul>
+      </ul> <br></br>
+
+
+      
     </div>
   );
 }
