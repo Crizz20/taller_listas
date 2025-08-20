@@ -1,35 +1,120 @@
 import Image from "next/image";
 
 const productos = [
-  { id: 1, nombre: "Camiseta", precio: 25, categoria: { id: 1, nombre: "Ropa" } },
-  { id: 2, nombre: "Zapatos deportivos", precio: 60, categoria: { id: 2, nombre: "Calzado" } },
+  {
+    id: 1,
+    nombre: "Camiseta",
+    precio: 25,
+    categoria: { id: 1, nombre: "Ropa" },
+  },
+  {
+    id: 2,
+    nombre: "Zapatos deportivos",
+    precio: 60,
+    categoria: { id: 2, nombre: "Calzado" },
+  },
   { id: 3, nombre: "Gorra", precio: 15, categoria: { id: 1, nombre: "Ropa" } },
-  { id: 4, nombre: "Pantalón", precio: 40, categoria: { id: 1, nombre: "Ropa" } },
-  { id: 5, nombre: "Bolso", precio: 30, categoria: { id: 3, nombre: "Accesorios" } },
+  {
+    id: 4,
+    nombre: "Pantalón",
+    precio: 40,
+    categoria: { id: 1, nombre: "Ropa" },
+  },
+  {
+    id: 5,
+    nombre: "Bolso",
+    precio: 30,
+    categoria: { id: 3, nombre: "Accesorios" },
+  },
 ];
 
-const usuarios = [ 
-  { id: 1, nombre: "Ana", direccion: { calle: "Calle 10", ciudad: "Bogotá", pais: "Colombia" } }, 
-  { id: 2, nombre: "Luis", direccion: { calle: "Av. Reforma", ciudad: "Ciudad de México", pais: "México" } }, 
-  { id: 3, nombre: "Marta", direccion: { calle: "Gran Vía", ciudad: "Madrid", pais: "España" } }, 
-  { id: 4, nombre: "John", direccion: { calle: "Main St", ciudad: "New York", pais: "USA" } }, 
-  { id: 5, nombre: "Pedro", direccion: { calle: "Rua Augusta", ciudad: "Lisboa", pais: "Portugal" } }, 
+const usuarios = [
+  {
+    id: 1,
+    nombre: "Ana",
+    direccion: { calle: "Calle 10", ciudad: "Bogotá", pais: "Colombia" },
+  },
+  {
+    id: 2,
+    nombre: "Luis",
+    direccion: {
+      calle: "Av. Reforma",
+      ciudad: "Ciudad de México",
+      pais: "México",
+    },
+  },
+  {
+    id: 3,
+    nombre: "Marta",
+    direccion: { calle: "Gran Vía", ciudad: "Madrid", pais: "España" },
+  },
+  {
+    id: 4,
+    nombre: "John",
+    direccion: { calle: "Main St", ciudad: "New York", pais: "USA" },
+  },
+  {
+    id: 5,
+    nombre: "Pedro",
+    direccion: { calle: "Rua Augusta", ciudad: "Lisboa", pais: "Portugal" },
+  },
 ];
 
-const cursos = [ 
-  { id: 1, nombre: "React", modulos: [{ nombre: "Componentes" }, { nombre: "Hooks" }] }, 
-  { id: 2, nombre: "Next.js", modulos: [{ nombre: "SSR" }, { nombre: "Static Props" }] }, 
-  { id: 3, nombre: "Node.js", modulos: [{ nombre: "Express" }, { nombre: "Middlewares" }] }, 
-  { id: 4, nombre: "Django", modulos: [{ nombre: "Modelos" }, { nombre: "Templates" }] }, 
-  { id: 5, nombre: "Flutter", modulos: [{ nombre: "Widgets" }, { nombre: "State Management" }] }, 
+const cursos = [
+  {
+    id: 1,
+    nombre: "React",
+    modulos: [{ nombre: "Componentes" }, { nombre: "Hooks" }],
+  },
+  {
+    id: 2,
+    nombre: "Next.js",
+    modulos: [{ nombre: "SSR" }, { nombre: "Static Props" }],
+  },
+  {
+    id: 3,
+    nombre: "Node.js",
+    modulos: [{ nombre: "Express" }, { nombre: "Middlewares" }],
+  },
+  {
+    id: 4,
+    nombre: "Django",
+    modulos: [{ nombre: "Modelos" }, { nombre: "Templates" }],
+  },
+  {
+    id: 5,
+    nombre: "Flutter",
+    modulos: [{ nombre: "Widgets" }, { nombre: "State Management" }],
+  },
 ];
 
-const pedidos = [ 
-  { id: 1, cliente: "Ana", productos: [{ nombre: "Camiseta", cantidad: 2 }, { nombre: "Gorra", cantidad: 1 }] }, 
-  { id: 2, cliente: "Luis", productos: [{ nombre: "Zapatos", cantidad: 1 }, { nombre: "Bolso", cantidad: 2 }] }, 
-  { id: 3, cliente: "Marta", productos: [{ nombre: "Pantalón", cantidad: 3 }] }, 
-  { id: 4, cliente: "John", productos: [{ nombre: "Sudadera", cantidad: 1 }, { nombre: "Gorra", cantidad: 2 }] }, 
-  { id: 5, cliente: "Pedro", productos: [{ nombre: "Camiseta", cantidad: 5 }] }, 
+const pedidos = [
+  {
+    id: 1,
+    cliente: "Ana",
+    productos: [
+      { nombre: "Camiseta", cantidad: 2 },
+      { nombre: "Gorra", cantidad: 1 },
+    ],
+  },
+  {
+    id: 2,
+    cliente: "Luis",
+    productos: [
+      { nombre: "Zapatos", cantidad: 1 },
+      { nombre: "Bolso", cantidad: 2 },
+    ],
+  },
+  { id: 3, cliente: "Marta", productos: [{ nombre: "Pantalón", cantidad: 3 }] },
+  {
+    id: 4,
+    cliente: "John",
+    productos: [
+      { nombre: "Sudadera", cantidad: 1 },
+      { nombre: "Gorra", cantidad: 2 },
+    ],
+  },
+  { id: 5, cliente: "Pedro", productos: [{ nombre: "Camiseta", cantidad: 5 }] },
 ];
 
 const blogs = [
@@ -48,12 +133,15 @@ const blogs = [
             texto: "Totalmente de acuerdo",
             reacciones: [
               { tipo: "like", usuario: { nombre: "Pedro", rol: "Estudiante" } },
-              { tipo: "love", usuario: { nombre: "John", rol: "Desarrollador" } }
-            ]
-          }
-        ]
-      }
-    ]
+              {
+                tipo: "love",
+                usuario: { nombre: "John", rol: "Desarrollador" },
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: 2,
@@ -69,59 +157,127 @@ const blogs = [
             usuario: "Ana",
             texto: "Lo probaré",
             reacciones: [
-              { tipo: "like", usuario: { nombre: "Luis", rol: "Frontend Dev" } }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+              {
+                tipo: "like",
+                usuario: { nombre: "Luis", rol: "Frontend Dev" },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    titulo: "Node.js API",
+    autor: { nombre: "John", pais: "USA" },
+    categorias: ["Backend", "API"],
+    comentarios: [
+      {
+        usuario: "Pedro",
+        texto: "Me sirvió mucho",
+        respuestas: [
+          {
+            usuario: "Luis",
+            texto: "Gracias por compartir",
+            reacciones: [
+              {
+                tipo: "clap",
+                usuario: { nombre: "Ana", rol: "Fullstack Dev" },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    titulo: "Django ORM",
+    autor: { nombre: "Marta", pais: "España" },
+    categorias: ["Backend", "Python"],
+    comentarios: [
+      {
+        usuario: "Ana",
+        texto: "Claro y conciso",
+        respuestas: [
+          {
+            usuario: "John",
+            texto: "Lo usaré en mi proyecto",
+            reacciones: [
+              { tipo: "like", usuario: { nombre: "Luis", rol: "Backend Dev" } },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    titulo: "Flutter Widgets",
+    autor: { nombre: "Pedro", pais: "Portugal" },
+    categorias: ["Mobile", "UI"],
+    comentarios: [
+      {
+        usuario: "Luis",
+        texto: "Genial explicación",
+        respuestas: [
+          {
+            usuario: "Marta",
+            texto: "Muy claro todo",
+            reacciones: [
+              { tipo: "love", usuario: { nombre: "Ana", rol: "UI Designer" } },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
-
 export default function Home() {
-
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] ">
-      
-       <h1>Lista de Productos</h1>
+      <h1>Lista de Productos</h1>
       <ul>
         {productos.map((producto) => (
           <li key={producto.id}>
             <strong>{producto.nombre}</strong>
             <p>Precio: ${producto.precio}</p>
-            <p>Categoría: {producto.categoria.nombre}</p>  <br></br>
+            <p>Categoría: {producto.categoria.nombre}</p> <br></br>
           </li>
         ))}
-      </ul> <br></br>
-      
-      <h1>Lista de Usuarios</h1>
+      </ul>{" "}
+      <br></br>
+      <h1>Lista de Usuarios</h1><br></br>
       <ul>
         {usuarios.map((usuario) => (
           <li key={usuario.id}>
             <strong>{usuario.nombre}</strong>
             <p>
               Dirección: {usuario.direccion.calle}, {usuario.direccion.ciudad},{" "}
-              {usuario.direccion.pais}  <br></br>
+              {usuario.direccion.pais} <br></br>
             </p>
           </li>
         ))}
-      </ul>  <br></br>
-      <h1>Lista de Cursos</h1>
+      </ul>{" "}
+      <br></br>
+      <h1>Lista de Cursos</h1><br></br>
       <ul>
         {cursos.map((curso) => (
           <li key={curso.id}>
             <strong>{curso.nombre}</strong>
             <ul>
               {curso.modulos.map((modulo, index) => (
-                <li key={index}>{modulo.nombre}</li>  
-              ))} <br></br>
+                <li key={index}>{modulo.nombre}</li>
+              ))}{" "}
+              <br></br>
             </ul>
           </li>
         ))}
-      </ul>  <br></br>
-
-      <h1>Lista de Pedidos</h1>
+      </ul>{" "}
+      <br></br>
+      <h1>Lista de Pedidos</h1><br></br>
       <ul>
         {pedidos.map((pedido) => (
           <li key={pedido.id}>
@@ -135,11 +291,11 @@ export default function Home() {
             </ul>
           </li>
         ))}
-      </ul> <br></br>
-
-        <h1>Lista de Blogs</h1>
+      </ul>{" "}
+      <br></br>
+      <h1>Lista de Blogs</h1><br></br>
       {blogs.map((blog) => (
-        <div key={blog.id} style={{ marginBottom: "20px" }}>
+        <div key={blog.id} style={{ marginBottom: "30px" }}>
           <h2>{blog.titulo}</h2>
           <p>
             Autor: {blog.autor.nombre} ({blog.autor.pais})
@@ -159,8 +315,7 @@ export default function Home() {
                         {respuesta.reacciones.map((reaccion, k) => (
                           <li key={k}>
                             <em>{reaccion.tipo}</em> por{" "}
-                            {reaccion.usuario.nombre} (
-                            {reaccion.usuario.rol})<br></br>
+                            {reaccion.usuario.nombre} ({reaccion.usuario.rol})
                           </li>
                         ))}
                       </ul>
@@ -172,7 +327,6 @@ export default function Home() {
           </ul>
         </div>
       ))}
-
     </div>
   );
 }
