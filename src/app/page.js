@@ -32,6 +32,51 @@ const pedidos = [
   { id: 5, cliente: "Pedro", productos: [{ nombre: "Camiseta", cantidad: 5 }] }, 
 ];
 
+const blogs = [
+  {
+    id: 1,
+    titulo: "Aprendiendo React",
+    autor: { nombre: "Ana", pais: "Colombia" },
+    categorias: ["JavaScript", "Frontend"],
+    comentarios: [
+      {
+        usuario: "Luis",
+        texto: "Muy útil",
+        respuestas: [
+          {
+            usuario: "Marta",
+            texto: "Totalmente de acuerdo",
+            reacciones: [
+              { tipo: "like", usuario: { nombre: "Pedro", rol: "Estudiante" } },
+              { tipo: "love", usuario: { nombre: "John", rol: "Desarrollador" } }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    titulo: "Next.js SSR",
+    autor: { nombre: "Luis", pais: "México" },
+    categorias: ["JavaScript", "SSR"],
+    comentarios: [
+      {
+        usuario: "Marta",
+        texto: "Interesante",
+        respuestas: [
+          {
+            usuario: "Ana",
+            texto: "Lo probaré",
+            reacciones: [
+              { tipo: "like", usuario: { nombre: "Luis", rol: "Frontend Dev" } }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+];
 
 
 export default function Home() {
@@ -75,6 +120,7 @@ export default function Home() {
           </li>
         ))}
       </ul>  <br></br>
+
       <h1>Lista de Pedidos</h1>
       <ul>
         {pedidos.map((pedido) => (
@@ -91,8 +137,42 @@ export default function Home() {
         ))}
       </ul> <br></br>
 
+        <h1>Lista de Blogs</h1>
+      {blogs.map((blog) => (
+        <div key={blog.id} style={{ marginBottom: "20px" }}>
+          <h2>{blog.titulo}</h2>
+          <p>
+            Autor: {blog.autor.nombre} ({blog.autor.pais})
+          </p>
+          <p>Categorías: {blog.categorias.join(", ")}</p>
 
-      
+          <h3>Comentarios</h3>
+          <ul>
+            {blog.comentarios.map((comentario, i) => (
+              <li key={i}>
+                <strong>{comentario.usuario}:</strong> {comentario.texto}
+                <ul>
+                  {comentario.respuestas.map((respuesta, j) => (
+                    <li key={j}>
+                      <strong>{respuesta.usuario}:</strong> {respuesta.texto}
+                      <ul>
+                        {respuesta.reacciones.map((reaccion, k) => (
+                          <li key={k}>
+                            <em>{reaccion.tipo}</em> por{" "}
+                            {reaccion.usuario.nombre} (
+                            {reaccion.usuario.rol})<br></br>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
     </div>
   );
 }
